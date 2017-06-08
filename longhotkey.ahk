@@ -335,7 +335,6 @@
 	Press()
 	{
 		Critical,1000
-		tic()
 		if (LongHotkey.allSuspended || (LongHotkey.LatestFirstUp!="" && ((LongHotkey.LatestFirstUp:="") || 1)))	; If pseudo-suspended, return 0 immediately, or if first up is needed to be suppressed.
 			return 0
 		if (LongHotkey.globalContextFunc!="" && !LongHotkey.globalContextFunc.Call())			; Global context check
@@ -382,7 +381,6 @@
 				}
 			}
 		}
-		toc()
 		return _oneHit*(_tilde=0) ;+_completedOne) ; If there is no hit, no suppress, if there is a tilde but no hotkey completed, no suppress, if there is a completed hotkey, suppress, regardless of tilde precence.
 	}
 	
